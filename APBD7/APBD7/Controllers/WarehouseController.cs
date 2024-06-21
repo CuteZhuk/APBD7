@@ -83,8 +83,7 @@ namespace APBD7.Controllers
             // Validate request
             if (request.Amount <= 0)
                 return BadRequest("Amount must be greater than 0.");
-
-            // Execute stored procedure
+            
             using (var connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 await connection.OpenAsync();
